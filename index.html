@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'accueil</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <main class="main" id="main">
         <nav>
@@ -19,19 +21,20 @@
         </nav>
 
         <div class="info">
-            <img src="images/phone.png" alt=""  class="phone">
+            <div class="overlay"></div>
+            <img src="images/phone.png" alt="" class="phone">
             <div id="circle">
                 <div class="feature Camera">
                     <img src="images/aperture.jpg" alt="">
                     <div>
-                        <h1>Camera</h1>
+                        <h1>Processor</h1>
                         <p>64HP loremipsum dolor sit.</p>
                     </div>
                 </div>
                 <div class="feature Processor">
                     <img src="images/processor.jpg" alt="">
                     <div>
-                        <h1>Processor</h1>
+                        <h1>Camera</h1>
                         <p>64HP loremipsum dolor sit.</p>
                     </div>
                 </div>
@@ -52,11 +55,32 @@
             </div>
         </div>
         <div class="controls">
-
             <img src="images/down-arrow.png" id="arrowUp" alt="">
             <h4>Caractéristiques</h4>
             <img src="images/down-arrow.png" id="arrowDown" alt="">
         </div>
     </main>
+    <script type="text/javascript">
+        const circle = document.getElementById('circle');
+        const up = document.getElementById('arrowUp');
+        const down = document.getElementById('arrowDown');
+        let currentRotateValue = circle.style.transform;
+        let clickRotateSum;
+
+        up.onclick = function(){
+            clickRotateSum = currentRotateValue + 'rotate(-90deg)';
+            circle.style.transform = clickRotateSum;
+            currentRotateValue = clickRotateSum;
+        }
+
+        
+        down.onclick = () => {
+            clickRotateSum = currentRotateValue + 'rotate(90deg)';
+            circle.style.transform = clickRotateSum;
+            currentRotateValue = clickRotateSum;
+        }
+
+    </script>
 </body>
+
 </html>

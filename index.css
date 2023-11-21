@@ -63,7 +63,7 @@ ul li a {
     height: 800px;
     transform: translateY(-50%);
     z-index: 100;
-    background-color: #eee;
+    
 }
 
 .phone{
@@ -82,7 +82,8 @@ ul li a {
     width: 800px;
     height: 800px;
     border-radius: 50%;
-    background-color: #eae0e0;
+    transform: rotate(0deg);
+    transition: 1s;
 }
 
 .feature{
@@ -111,6 +112,7 @@ ul li a {
 .Camera{
    top: 120px;
    left: 300px; 
+   transform: rotate(-90deg);
 }
 .Processor{
     top: 370px;
@@ -120,11 +122,13 @@ ul li a {
 .Display{
     bottom: 360px;
     left: 50px;
+    transform: rotate(180deg);
 }
 
 .weight{
     bottom: 130px;
     left: 300px;
+    transform: rotate(-270deg);
 }
 .controls{
     position: absolute;
@@ -145,10 +149,24 @@ ul li a {
     transition: background 0.3s;
 }
 
-.controls img:hover {
-    background: rgb(0 0 0/15%);
+.controls img:hover{
+    background: rgb(0 0 0 /15%);
 }
 
-.controls #arrowUp{
-    transform: rotate(180deg);
+.controls #arrowUp {
+    transform:rotate(180deg);
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border-top: 400px solid #000;
+    border-bottom: 400px solid #000;
+    border-left: 400px solid #000;
+    border-right: 400px solid transparent;
+    
 }
